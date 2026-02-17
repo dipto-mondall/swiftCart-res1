@@ -1,4 +1,4 @@
-console.log("connected");
+
 // all products
 const allProduct = () => {
   const url = "https://fakestoreapi.com/products";
@@ -12,12 +12,12 @@ const allProduct = () => {
 
 // show all products
 const showAllProducts = (data) => {
-  console.log(data);
+  //console.log(data);
   const cardsContainer = document.getElementById("cards-container");
   cardsContainer.innerHTML = "";
 
   data.forEach((element) => {
-    console.log(element);
+   // console.log(element);
     const div = document.createElement("div");
     div.innerHTML = `
       <div class="border-1 border-gray-200 p-4 rounded-md ">
@@ -46,5 +46,44 @@ const showAllProducts = (data) => {
     cardsContainer.appendChild(div);
   });
 };
+// load category's
+const category = async () => {
+  const url = "https://fakestoreapi.com/products/categories";
+  const res = await fetch(url);
+  const data = await res.json();
+  showCategory(data);
+  //console.log(data);
 
-allProduct();
+ 
+};
+
+const showCategory = (data) => {
+  console.log(data);
+  const categoryContainer = document.getElementById("category-container");
+for (let i = 0; i < data.length; i++) {
+  const li = document.createElement("li");
+  li.classList.add("btn", "p-4", "rounded-lg");
+  li.id = `category-${i+2}`;
+  li.innerText = data[i];
+  categoryContainer.appendChild(li);
+}
+};
+
+
+
+
+ allProduct();
+category();
+
+
+
+
+
+
+
+
+
+
+
+
+
