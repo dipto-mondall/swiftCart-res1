@@ -33,7 +33,9 @@ const allProduct = () => {
   const url = "https://fakestoreapi.com/products";
   fetch(url)
     .then((res) => res.json())
-    .then((data) => showAllProducts(data));
+    .then((data) => {
+      showAllProducts(data);
+    });
 
   document.getElementById("all").classList.add("bg-blue-500", "text-white");
  
@@ -269,7 +271,7 @@ const category5 = (c) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(c);
+      // console.log(c);
        data.forEach((element) => {
     // console.log(element);
     const div = document.createElement("div");
@@ -304,6 +306,9 @@ const category5 = (c) => {
 
     document.getElementById("category-5").classList.add("bg-blue-500", "text-white");
 };
+
+
+
 
 allProduct();
 
