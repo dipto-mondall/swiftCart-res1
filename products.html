@@ -83,25 +83,31 @@
       <h2 class="text-black text-center text-2xl font-bold my-8">
         Our Products
       </h2>
-      <div class="" >
-         <ul id="category-container"
-          class="lg:px-34 flex flex-wrap gap-5 md:justify-around items-center text-gray-700 
-          font-normal text-lg"
-        
+      <div class="">
+        <ul
+          id="category-container"
+          class="lg:px-34 flex flex-wrap gap-5 md:justify-around items-center text-gray-700 font-normal text-lg"
         >
-        <li class="btn p-4 rounded-lg" id="all" onclick="allProduct()">All</li>
-
-      </ul>
+          <li class="btn p-4 rounded-lg" id="all" onclick="allProduct()">
+            All
+          </li>
+        </ul>
       </div>
     </div>
     <!-- cards -->
-    <section id="cards-container" class="md:px-[200px]  px-10 mt-10 space-y-5 gap-6 
-     md:grid md:grid-cols-2 lg:grid-cols-4  ">
-  
-        
-      
-    </section >
+    <section
+      id="cards-container"
+      class="md:px-[200px] px-10 mt-10 space-y-5 gap-6 md:grid md:grid-cols-2 lg:grid-cols-4"
+    ></section>
 
+    <!-- modal -->
+    <dialog id="my_modal_2" class="modal">
+      <div class="modal-box" id="modal-container">
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
     <script src="./Script/index.js"></script>
   </body>
 </html>

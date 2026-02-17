@@ -15,7 +15,7 @@ const showAllProducts = (data) => {
   cardsContainer.innerHTML = "";
 
   data.forEach((element) => {
-    // console.log(element);
+    //console.log(element);
     const div = document.createElement("div");
     div.innerHTML = `
       <div class="border-1 border-gray-200 p-4 rounded-md ">
@@ -36,8 +36,8 @@ const showAllProducts = (data) => {
         <p class="text-black text-xl font-semibold">$ ${element.price}</p>
         <!-- btn -->
         <div class="mt-5 flex flex-wrap justify-between items-center text-lg">
-            <button class="btn rounded-xl px-4 text-gray-600 "><i class="fa-regular fa-eye"></i>Details</button>
-            <button class="btn rounded-xl px-4 text-white bg-violet-600"><i class="fa-solid fa-cart-shopping"></i>Add</button>
+            <button onclick="details(${element.id})" class="btn rounded-xl px-4 text-gray-600 "><i class="fa-regular fa-eye"></i>Details</button>
+            <button onclick="add()" class="btn rounded-xl px-4 text-white bg-violet-600"><i class="fa-solid fa-cart-shopping"></i>Add</button>
         </div>
       </div> 
     `;
@@ -102,8 +102,8 @@ const electronics = (c) => {
         <p class="text-black text-xl font-semibold">$ ${element.price}</p>
         <!-- btn -->
         <div class="mt-5 flex flex-wrap justify-between items-center text-lg">
-            <button class="btn rounded-xl px-4 text-gray-600 "><i class="fa-regular fa-eye"></i>Details</button>
-            <button class="btn rounded-xl px-4 text-white bg-violet-600"><i class="fa-solid fa-cart-shopping"></i>Add</button>
+            <button onclick="details(${element.id})" class="btn rounded-xl px-4 text-gray-600 "><i class="fa-regular fa-eye"></i>Details</button>
+            <button onclick="add()" class="btn rounded-xl px-4 text-white bg-violet-600"><i class="fa-solid fa-cart-shopping"></i>Add</button>
         </div>
       </div> 
     `;
@@ -114,6 +114,43 @@ const electronics = (c) => {
 
    document.getElementById("category-2").classList.add("bg-blue-500", "text-white");
 };
+
+
+// details by modal
+const details = (id) =>{
+  const url = `https://fakestoreapi.com/products/${id}`;
+  fetch(url)
+  .then((res) => res.json())
+  .then((data) => showDetails(data))
+
+}
+
+const showDetails = (d) =>{
+ const modal = document.getElementById("modal-container");
+  modal.innerHTML = "";
+   const div = document.createElement('div');
+   div.innerHTML=`
+   
+            <h3 class="text-lg font-bold text-center">${d.title}</h3>
+        <p class="py-4">${d.description}</p>
+        
+        <div class="flex gap-4  items-center my-4">
+         <p class="my-4">$${d.price}</p>
+         <p class=""><i class="fa-solid fa-star text-orange-500 mr-1"></i>${d.rating.rate}</p>
+        </div>
+         <button class="btn p-5 text-blue-700">Add to Cart</button>
+  
+  `;
+  modal.appendChild(div)
+  my_modal_2.showModal();
+  
+}
+
+
+
+
+
+
 
 allProduct();
 category();
