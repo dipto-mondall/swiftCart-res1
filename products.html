@@ -33,14 +33,14 @@
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-      <!-- nav -->
+    <!-- nav -->
     <div class="navbar bg-base-100 shadow-sm md:px-[200px]">
       <div class="navbar-start">
         <a class="btn btn-ghost text-xl text-blue-600 font-bold">swiftCart</a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 text-gray-500 font-medium text-lg">
-          <li  class="text-blue-500"><a href="./index.html">Home</a></li>
+          <li class="text-blue-500"><a href="./index.html">Home</a></li>
           <li><a href="./products.html">Products</a></li>
           <li><a>About</a></li>
           <li><a>Contact</a></li>
@@ -70,33 +70,39 @@
             tabindex="-1"
             class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-28 p-2 shadow text-gray-500"
           >
-          <li  class="text-blue-500"><a href="./index.html">Home</a></li>
-          <li><a href="./products.html">Products</a></li>
-          <li><a>About</a></li>
-          <li><a>Contact</a></li>
+            <li class="text-blue-500"><a href="./index.html">Home</a></li>
+            <li><a href="./products.html">Products</a></li>
+            <li><a>About</a></li>
+            <li><a>Contact</a></li>
           </ul>
         </div>
       </div>
     </div>
     <!-- products section -->
-     <div class="px-10 md:px-[200px]">
-        <h2 class="text-black text-center text-2xl font-bold my-8">Our Products</h2>
-        <div class="">
-            <div class=" lg:px-34 flex flex-wrap gap-5 md:justify-around items-center text-gray-700 font-normal text-lg">
-                <a href=""class="btn p-4 rounded-lg">All</a>
-                <a href=""class="btn p-4 rounded-lg">Electronics</a>
-                <a href=""class="btn p-4 rounded-lg">Jewelry</a>
-                <a href=""class="btn p-4 rounded-lg">Men's Clothing</a>
-                <a href=""class="btn p-4 rounded-lg">Women's Clothing</a>
-            </div>
+    <div class="px-10 md:px-[200px]">
+      <h2 class="text-black text-center text-2xl font-bold my-8">
+        Our Products
+      </h2>
+      <div class="">
+        <div
+          class="lg:px-34 flex flex-wrap gap-5 md:justify-around items-center text-gray-700 font-normal text-lg"
+        >
+          <a onclick="allProduct()" href="#" id="all" class="btn p-4 rounded-lg">All</a>
+          <a href="" class="btn p-4 rounded-lg">Electronics</a>
+          <a href="" class="btn p-4 rounded-lg">Jewelry</a>
+          <a href="" class="btn p-4 rounded-lg">Men's Clothing</a>
+          <a href="" class="btn p-4 rounded-lg">Women's Clothing</a>
         </div>
-    </div>
-     <!-- cards -->
-      <div id="cards-container">
-        
-
       </div>
-    
+    </div>
+    <!-- cards -->
+    <section id="cards-container" class="md:px-[200px]  px-10 mt-10 space-y-5 gap-6 
+     md:grid md:grid-cols-2 lg:grid-cols-4  ">
+  
+        
+      
+    </section >
+
     <script src="./Script/index.js"></script>
   </body>
 </html>
